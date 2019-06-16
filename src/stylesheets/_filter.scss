@@ -1,0 +1,29 @@
+.pokemon__filter--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon__filter {
+  height: 35px;
+  width: 200px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  &:focus{
+    outline: none;
+  }
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.1);
+  border: none;
+  @media all and (min-width: 500px) {
+    width: 300px;
+  }
+}
+
+.pokemon__filter--label {
+  height: 5px;
+  padding-top: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}

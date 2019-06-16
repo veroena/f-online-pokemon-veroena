@@ -1,0 +1,15 @@
+.pokemon__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.pokemon__title {
+  margin: 0;
+}
+
+.pokemon__header--ball {
+  height: 38px;
+  margin: 0 10px;
+}

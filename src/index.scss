@@ -1,120 +1,22 @@
+@import 'stylesheets/poke-list.scss';
 @import 'stylesheets/poke-card.scss';
+@import 'stylesheets/header.scss';
+@import 'stylesheets/filter.scss';
+@import 'stylesheets/frame.scss';
+
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .container {
+  box-sizing: border-box;
   background-color: yellow;
   min-height: 100vh;
   width: 100vw;
   position: relative;
-  overflow-x: hidden;
   font-family: "Roboto", sans-serif;
-}
-
-
-.corner__left--up {
-  width: 0;
-  height: 0;
-  border-top: 70px solid black;
-  border-right: 70px solid transparent;
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  z-index: 1;
-  @media all and (min-width: 500px){
-    border-top: 100px solid black;
-    border-right: 100px solid transparent;
-  }
-}
-
-.corner__right--up {
-  width: 0;
-  height: 0;
-  border-top: 70px solid black;
-  border-left: 70px solid transparent;
-  position: fixed;
-  top: 0%;
-  right: 0%;
-  z-index: 1;
-  @media all and (min-width: 500px){
-    border-top: 100px solid black;
-    border-left: 100px solid transparent;
-  }
-}
-
-.corner__left--down {
-  width: 70px;
-  height: 70px;
-  border-radius: 0 0 70px 0;
-  background: red;
-  position: fixed;
-  bottom: 0;
-  transform: rotate(-90deg);
-  z-index: 1;
-  @media all and (min-width: 500px){
-    width: 100px;
-    height: 100px;
-    border-radius: 0 0 100px 0;
-  }
-}
-
-.corner__right--down {
-  width: 70px;
-  height: 70px;
-  border-radius: 0 0 70px 0;
-  background: red;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  transform: rotate(180deg);
-  z-index: 1;
-  @media all and (min-width: 500px){
-    width: 100px;
-    height: 100px;
-    border-radius: 0 0 100px 0;
-  }
-}
-
-.pokemon__header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-}
-
-.pokemon__title {
-  margin: 0;
-}
-
-.pokemon__header--ball {
-  height: 40px;
-  margin: 0 10px;
-}
-
-.pokemon__filter--container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pokemon__filter {
-  height: 30px;
-  width: 200px;
-  border-radius: 15px;
-  padding: 10px;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  &:focus{
-    outline: none;
-  }
-  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.1);
-  border: none;
-  @media all and (min-width: 500px) {
-    width: 300px;
-  }
 }
 
 .list__container {
@@ -123,14 +25,6 @@ body {
   align-items: center;
 }
 
-.pokemon__list {
-  list-style: none;
-  padding: 0;
-  @media all and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  @media all and (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
+.loading__text {
+  padding-top: 30px;
 }

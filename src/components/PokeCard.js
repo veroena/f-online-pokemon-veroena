@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class PokeCard extends React.Component {
   render() {
@@ -20,6 +21,10 @@ class PokeCard extends React.Component {
       </div>
     )
   }
+}
+
+PokeCard.propTypes = {
+  item: PropTypes.object.isRequired
 }
 
 export default PokeCard;
