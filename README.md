@@ -13,8 +13,8 @@ This project was developed as a part of the online training for [Adalab](https:/
   ### `npm start`
 
 ## Build
-* [React](https://reactjs.org/) - JavaScript Framework  ⚛︎
-* [SASS](https://sass-lang.com/) - CSS preprocessor  🎨
+* [React](https://reactjs.org/) - JavaScript Framework
+* [SASS](https://sass-lang.com/) - CSS preprocessor
 
 ## Author
 
@@ -37,4 +37,4 @@ index.js
 ```
 
 ## Thank you!
-Thank you for stopping by and checking this project! If you have ideas on how to improve, don't hesitate to contact me through the issues :)
+Thank you for stopping by and checking this project! If you have ideas on how to improve it, don't hesitate to contact me through the issues :)
