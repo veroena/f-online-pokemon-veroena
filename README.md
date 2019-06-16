@@ -22,18 +22,18 @@ This project was developed as a part of the online training for [Adalab](https:/
 
 ## Structure
 
-``` Index.js
-  '
-  ' - src
-      ' - App  
-      ' - components
-          ' - Filter.js
-          ' - Frame.js
-          ' - Header.js
-          ' - PokeCard.js
-          ' - PokeList.js
-      ' - stylesheets
-      ' - services
+```
+index.js
+  - src
+      - App  
+      - components
+          - Filter.js
+          - Frame.js
+          - Header.js
+          - PokeCard.js
+          - PokeList.js
+      - stylesheets
+      - services
 ```
 
 ## Thank you!
