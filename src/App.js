@@ -1,9 +1,8 @@
 import React from 'react';
-import PokeList from './components/PokeList';
-import Header from './components/Header';
-import Filter from './components/Filter';
-import Frame from './components/Frame';
-import {getPokemons} from './services/GetPokemons';
+import Home from './components/Home';
+import PokeDetail from './components/PokeDetail';
+import { getPokemons } from './services/GetPokemons';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -47,16 +46,18 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <Frame />
-        <Header />
-        <Filter handleFilter={this.handleFilter} filterPoke={filterPoke} />
-        <div className="list__container">
-          {pokeList.length === 0 ?
-            <p className="loading__text">Cargando...</p>
-          :
-            <PokeList pokeList={pokeList} filterPoke={filterPoke} />
-          }
-        </div>
+        <Switch>
+          <Route exact path="/" render={() => (<Home  
+            filterPoke={filterPoke}
+            pokeList={pokeList}
+            handleFilter={this.handleFilter}
+            />) }
+          />
+          <Route path="/:name" render={props => (<PokeDetail
+            match={props.match}
+            pokeList={pokeList}
+          />)} />
+        </Switch>
       </div>
     );
   }

@@ -1,0 +1,59 @@
+.detail__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.detail {
+  background-color: white;
+  height: 400px;
+  width: 600px;
+  border-radius: 15px;
+}
+
+.detail__name {
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+
+.detail__images--container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail__box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.detail__abilities, .detail__types, .detail__stats {
+  list-style: none;
+  padding: 0;
+}
+
+.detail__text {
+  margin: 0;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.detail__left {
+  width: 200px;
+}
+
+
+.details__stats-bar--container {
+  height: 20px;
+  width: 300px;
+  border: solid 1px black;
+}
+
+.details__stats-bar {
+  height: 100%;
+}

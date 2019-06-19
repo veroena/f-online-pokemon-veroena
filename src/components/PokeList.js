@@ -1,6 +1,7 @@
 import React from 'react';
 import PokeCard from './PokeCard';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class PokeList extends React.Component {
   render() {
@@ -17,7 +18,9 @@ class PokeList extends React.Component {
           <ul className="pokemon__list">
             {filteredList.map(item => 
               <li className="pokemon__item" key={item.id}>
-                <PokeCard item={item}/>
+                <Link to={`/${item.name}`} className="pokemon__list--link">
+                  <PokeCard item={item}/>
+                </Link>
               </li>  
             )}
             </ul>
