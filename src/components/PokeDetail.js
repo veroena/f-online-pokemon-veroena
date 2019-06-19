@@ -38,11 +38,11 @@ class PokeDetail extends React.Component{
               <ul className="detail__stats">
                 <h3 className="detail__stats">Stats:</h3>
                 {item.stats.map((stat, index) =>
-                  <li key={index}>
+                  <li key={index} className="detail__stats--item">
                     <p className="stat__title">{stat.stat.name} :</p>
                     <div className="details__stats-bar--container">
-                      <div className="details__stats-bar" style={{ backgroundColor: "#055B10", width: `${stat.base_stat}% `}}>
-                        <span className="details__stats--number">{ stat.base_stat }</span>
+                      <div className="details__stats-bar" style={{ backgroundColor: "#7FDBB6", width: `${stat.base_stat}% `}}>
+                        <p className="details__stats--number">{ stat.base_stat }</p>
                         </div>
                       </div>
                   </li>

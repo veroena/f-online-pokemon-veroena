@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-.detail__text {
+.detail__text, .detail__stats, .stat__title {
   margin: 0;
   font-weight: normal;
   font-size: 16px;
@@ -47,13 +47,32 @@
   width: 200px;
 }
 
+.detail__stats--item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 .details__stats-bar--container {
   height: 20px;
-  width: 300px;
-  border: solid 1px black;
+  width: 150px;
+  border: solid 1px darkslategray;
+  border-radius: 5px;
+  margin: 4px 0;
 }
 
 .details__stats-bar {
   height: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.details__stats--number {
+  color: white;
+  text-align: left;
+  margin: 5px 10px 4px 0;
+  font-size: 14px;
 }
