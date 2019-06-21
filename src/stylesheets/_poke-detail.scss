@@ -6,6 +6,21 @@
   width: 100vw;
 }
 
+.link__chevron {
+  text-decoration: none;
+  font-size: 40px;
+  margin: 15px;
+  color: white;
+  &:hover {
+  color: rgba(76, 167, 215, 0.8);    
+  }
+}
+
+.chevron-space {
+  width: 70px;
+  height: 40px;
+}
+
 .detail {
   background-color: white;
   height: 400px;

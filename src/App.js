@@ -23,20 +23,17 @@ class App extends React.Component {
   componentDidMount() {
     if (this.state.pokeList.length === 0) {
       getPokemons()
-        .then(data => {
-          const promiseUrl = data.results.map(item=>
-            fetch(item.url))
-  
-          Promise.all(promiseUrl)
-            .then(responses => {
-              const promiseResults = responses.map(responses => responses.json())
-  
-              Promise.all(promiseResults)
-                .then(data => {
-                  this.setState({pokeList: data});
-                  localStorage.setItem('pokeList', JSON.stringify(data));
-                })
+        .then(data => data.results)
+        .then(pokemons => {
+          pokemons.forEach(pokemon => {
+            fetch(pokemon.url)
+            .then(response => response.json())
+            .then(pokemon => {
+              console.log(pokemon);
+              this.setState(prevState => ({pokeList: [...prevState.pokeList, pokemon]}))
+              localStorage.setItem('pokeList', JSON.stringify(this.state.pokeList));
             })
+          })
         })
     }
   }

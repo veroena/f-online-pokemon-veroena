@@ -16,7 +16,9 @@ class PokeList extends React.Component {
           </div>
           :
           <ul className="pokemon__list">
-            {filteredList.map(item => 
+            {filteredList
+            .sort((a, b) => {return a.id - b.id;})
+            .map(item => 
               <li className="pokemon__item" key={item.id}>
                 <Link to={`/${item.name}`} className="pokemon__list--link">
                   <PokeCard item={item}/>
