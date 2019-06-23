@@ -1,6 +1,6 @@
 # Pokedex
 
-This small app shows you an array of Pokémons, including their name, types and a picture, and you can filter the Pokémons by name.
+This small app shows you an array of Pokémons, including their name, types and a picture, and you can filter the Pokémons by name. When you click on one of the Pokémons, it shows a detail card (built with React Router) with more information about the Pokémon.
 
 This project was developed as a part of the online training for [Adalab](https://adalab.es/) It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and the data comes from [PokeApi](https://pokeapi.co/).
 
