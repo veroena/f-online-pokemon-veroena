@@ -1,15 +1,14 @@
 import React from 'react';
-import PokeList from './components/PokeList';
-import Header from './components/Header';
-import Filter from './components/Filter';
-import Frame from './components/Frame';
-import {getPokemons} from './services/GetPokemons';
+import Home from './components/Home';
+import PokeDetail from './components/PokeDetail';
+import { getPokemons } from './services/GetPokemons';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokeList: JSON.parse(localStorage.getItem('pokeList')) || [],
+      pokeList: [],
       filterPoke: ''
     };
     this.handleFilter = this.handleFilter.bind(this);
@@ -24,39 +23,46 @@ class App extends React.Component {
   componentDidMount() {
     if (this.state.pokeList.length === 0) {
       getPokemons()
-        .then(data => {
-          const promiseUrl = data.results.map(item=>
-            fetch(item.url))
-  
-          Promise.all(promiseUrl)
-            .then(responses => {
-              const promiseResults = responses.map(responses => responses.json())
-  
-              Promise.all(promiseResults)
-                .then(data => {
-                  this.setState({pokeList: data});
-                  localStorage.setItem('pokeList', JSON.stringify(data));
-                })
+        .then(data => data.results)
+        .then(pokemons => {
+          pokemons.forEach(pokemon => {
+            fetch(pokemon.url)
+            .then(response => response.json())
+            .then(pokemon => {
+              let pokemonMore = pokemon;
+              fetch(pokemon.species.url)
+              .then(response => response.json())
+              .then(evolution => {
+                pokemonMore = {...pokemonMore, ...evolution};
+                this.setState(
+                  prevState => ({
+                    pokeList: [...prevState.pokeList, pokemonMore]
+                  })
+                )
+              })
             })
-        })
+          })
+        }
+      )
     }
   }
 
   render() {
     const { pokeList, filterPoke } = this.state;
-
     return (
       <div className="container">
-        <Frame />
-        <Header />
-        <Filter handleFilter={this.handleFilter} filterPoke={filterPoke} />
-        <div className="list__container">
-          {pokeList.length === 0 ?
-            <p className="loading__text">Cargando...</p>
-          :
-            <PokeList pokeList={pokeList} filterPoke={filterPoke} />
-          }
-        </div>
+        <Switch>
+          <Route exact path="/" render={() => (<Home  
+            filterPoke={filterPoke}
+            pokeList={pokeList}
+            handleFilter={this.handleFilter}
+            />) }
+          />
+          <Route path="/:name" render={props => (<PokeDetail
+            match={props.match}
+            pokeList={pokeList}
+          />)} />
+        </Switch>
       </div>
     );
   }

@@ -17,6 +17,13 @@ class PokeCard extends React.Component {
               <li className="pokemon__types" key={index}>{item.type.name}</li>
             )}
           </ul>
+          <div className="pokemon__evolution">
+            {item.evolves_from_species === null ?
+              null
+            :  
+              <p className="pokemon__evolution--text">Evolves from: <span className="pokemon__evolution--text-span">{item.evolves_from_species.name}</span></p>
+            }
+          </div>
         </div>
       </div>
     )

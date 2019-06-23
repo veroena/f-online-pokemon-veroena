@@ -6,8 +6,8 @@ class Filter extends React.Component {
     const { filterPoke, handleFilter } = this.props;
     return (
       <form action="" className="pokemon__filter--container">
-        <label htmlFor="" className="pokemon__filter--label">Busca pokemons por el nombre</label>
-        <input onChange={handleFilter} type="text" className="pokemon__filter" value={filterPoke} placeholder="Busca tu Pokémon favorito"/>
+        <label htmlFor="filter-pokemon" className="pokemon__filter--label">Search Pokémons by name</label>
+        <input onChange={handleFilter} type="text" className="pokemon__filter" value={filterPoke} placeholder="Search your favorite Pokémon" id="filter-pokemon" name="filter-pokemon"/>
       </form>
     )
   }

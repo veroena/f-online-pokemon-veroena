@@ -1,5 +1,5 @@
-@import 'stylesheets/poke-list.scss';
 @import 'stylesheets/poke-card.scss';
+@import 'stylesheets/poke-list.scss';
 @import 'stylesheets/header.scss';
 @import 'stylesheets/filter.scss';
 @import 'stylesheets/frame.scss';
@@ -12,7 +12,7 @@ body {
 
 .container {
   box-sizing: border-box;
-  background-color: yellow;
+  background-color: #FEE52D;
   min-height: 100vh;
   width: 100vw;
   position: relative;
