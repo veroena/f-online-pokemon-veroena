@@ -15,7 +15,7 @@ class Home extends React.Component{
         <Filter handleFilter={handleFilter} filterPoke={filterPoke} />
         <div className="list__container">
           {pokeList.length === 0 ?
-            <p className="loading__text">Cargando...</p>
+            <p className="loading__text">Loading...</p>
           :
             <PokeList pokeList={pokeList} filterPoke={filterPoke} />
           }

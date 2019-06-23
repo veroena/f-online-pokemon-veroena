@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokeList: JSON.parse(localStorage.getItem('pokeList')) || [],
+      pokeList: [],
       filterPoke: ''
     };
     this.handleFilter = this.handleFilter.bind(this);
@@ -29,18 +29,26 @@ class App extends React.Component {
             fetch(pokemon.url)
             .then(response => response.json())
             .then(pokemon => {
-              console.log(pokemon);
-              this.setState(prevState => ({pokeList: [...prevState.pokeList, pokemon]}))
-              localStorage.setItem('pokeList', JSON.stringify(this.state.pokeList));
+              let pokemonMore = pokemon;
+              fetch(pokemon.species.url)
+              .then(response => response.json())
+              .then(evolution => {
+                pokemonMore = {...pokemonMore, ...evolution};
+                this.setState(
+                  prevState => ({
+                    pokeList: [...prevState.pokeList, pokemonMore]
+                  })
+                )
+              })
             })
           })
-        })
+        }
+      )
     }
   }
 
   render() {
     const { pokeList, filterPoke } = this.state;
-
     return (
       <div className="container">
         <Switch>

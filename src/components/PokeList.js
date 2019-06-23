@@ -11,7 +11,7 @@ class PokeList extends React.Component {
       <React.Fragment>
         {filteredList.length === 0 ?
           <div className="filter-error__container">
-            <p className="filter-error__text">Ningún Pokémon coincide con la búsqueda</p>
+            <p className="filter-error__text">No Pokémon matches the search</p>
             <img className="filter-error__image" src="https://cdn.mobilesyrup.com/wp-content/uploads/2018/06/sad-pikachu.jpg" alt="sad pikachu"/>
           </div>
           :
